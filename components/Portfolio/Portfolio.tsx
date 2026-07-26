@@ -278,7 +278,7 @@ export function Portfolio() {
           >
             <button
               type="button"
-              className="absolute top-5 right-5 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white"
+              className="absolute top-5 right-5 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm"
               aria-label="Close lightbox"
               onClick={() =>
                 activeAlbum.photos.length <= 1
@@ -292,7 +292,7 @@ export function Portfolio() {
             {activeAlbum.photos.length > 1 ? (
               <button
                 type="button"
-                className="absolute left-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white md:left-8"
+                className="absolute top-1/2 left-3 z-20 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm md:left-8"
                 aria-label="Previous image"
                 onClick={(event) => {
                   event.stopPropagation();
@@ -308,7 +308,7 @@ export function Portfolio() {
 
             <motion.div
               key={activeAlbum.photos[lightboxIndex].src}
-              className="relative h-[70vh] w-full max-w-5xl overflow-hidden"
+              className="relative z-0 h-[70vh] w-full max-w-5xl overflow-hidden"
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.96 }}
@@ -335,7 +335,7 @@ export function Portfolio() {
             {activeAlbum.photos.length > 1 ? (
               <button
                 type="button"
-                className="absolute right-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white md:right-8"
+                className="absolute top-1/2 right-3 z-20 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm md:right-8"
                 aria-label="Next image"
                 onClick={(event) => {
                   event.stopPropagation();

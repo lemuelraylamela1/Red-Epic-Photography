@@ -26,6 +26,22 @@ export type PortfolioCategory =
   | "Lifestyle"
   | "Events";
 
+export type PortfolioPhoto = {
+  src: string;
+  alt: string;
+};
+
+export type PortfolioAlbum = {
+  id: string;
+  title: string;
+  category: Exclude<PortfolioCategory, "All">;
+  cover: string;
+  coverAlt: string;
+  height: "short" | "medium" | "tall";
+  photos: PortfolioPhoto[];
+};
+
+/** @deprecated Use PortfolioAlbum */
 export type PortfolioItem = {
   id: string;
   title: string;

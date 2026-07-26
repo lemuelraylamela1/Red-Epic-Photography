@@ -19,6 +19,7 @@ export type Service = {
 export type PortfolioCategory =
   | "All"
   | "Wedding"
+  | "Prenup"
   | "Portrait"
   | "Family"
   | "Corporate"

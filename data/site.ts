@@ -11,15 +11,15 @@ import type {
 } from "@/types";
 
 export const siteConfig = {
-  name: "Red Epic Photography",
+  name: "Red Epic Photo",
   shortName: "Red Epic Photo",
   wordmark: "RED EPIC PHOTO",
   tagline: "Capturing Moments.\nCreating Timeless Memories.",
   description:
-    "Red Epic Photography preserves life's most meaningful moments through cinematic, timeless imagery—crafted with elegance, emotion, and precision.",
-  url: "https://red-epic-photography.vercel.app/",
-  logo: "/images/logo-red-epic.png",
-  mark: "/icons/red-epic-mark.svg",
+    "Red Epic Photo preserves life's most meaningful moments through cinematic, timeless imagery—crafted with elegance, emotion, and precision.",
+  url: "https://redepicphoto.vercel.app/",
+  logo: "/icons/red-epic-icon.png",
+  mark: "/icons/red-epic-icon.png",
 };
 
 export const navigation: NavItem[] = [
@@ -33,20 +33,28 @@ export const navigation: NavItem[] = [
 
 export const heroSlides: HeroSlide[] = [
   {
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=80",
-    alt: "Bride and groom walking through soft golden light",
+    src: "/images/wedding/wedding-01.jpg",
+    alt: "Wedding couple sharing a cinematic moment",
   },
   {
-    src: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=2400&q=80",
-    alt: "Intimate wedding portrait with cinematic shadows",
+    src: "/images/prenup/prenup-09.jpg",
+    alt: "Intimate prenup embrace in soft light",
   },
   {
-    src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=2400&q=80",
-    alt: "Elegant couple portrait in natural light",
+    src: "/images/wedding/wedding-06.jpg",
+    alt: "Timeless wedding portrait with cinematic depth",
   },
   {
-    src: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=2400&q=80",
-    alt: "Romantic prenup moment framed in soft focus",
+    src: "/images/prenup/prenup-05.jpg",
+    alt: "Elegant prenup session filled with emotion",
+  },
+  {
+    src: "/images/wedding/wedding-11.jpg",
+    alt: "Elegant wedding image with timeless styling",
+  },
+  {
+    src: "/images/prenup/prenup-07.jpg",
+    alt: "Couple standing close during a prenup session",
   },
 ];
 
@@ -74,17 +82,15 @@ export const services: Service[] = [
     title: "Wedding Photography",
     description:
       "Full-day coverage that captures ceremony, celebration, and every quiet moment in between.",
-    image:
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
-    alt: "Wedding couple holding hands during a ceremony",
+    image: "/images/wedding/wedding-03.jpg",
+    alt: "Wedding couple during a heartfelt ceremony moment",
   },
   {
     id: "prenup",
     title: "Prenup Photography",
     description:
       "Romantic, editorial sessions designed to tell your love story before the big day.",
-    image:
-      "https://images.unsplash.com/photo-1529634596773-5c84c3b0f3c5?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/prenup/prenup-03.jpg",
     alt: "Couple embracing during a prenup photoshoot",
   },
   {
@@ -128,6 +134,7 @@ export const services: Service[] = [
 export const portfolioCategories: PortfolioCategory[] = [
   "All",
   "Wedding",
+  "Prenup",
   "Portrait",
   "Family",
   "Corporate",
@@ -140,8 +147,8 @@ export const portfolioItems: PortfolioItem[] = [
     id: "p1",
     title: "Garden Ceremony",
     category: "Wedding",
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-    alt: "Bride and groom walking among trees",
+    src: "/images/wedding/wedding-01.jpg",
+    alt: "Wedding couple captured in a cinematic outdoor frame",
     height: "tall",
   },
   {
@@ -170,10 +177,10 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "p5",
-    title: "Golden Hour Love",
-    category: "Lifestyle",
-    src: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80",
-    alt: "Couple sharing a quiet moment at sunset",
+    title: "Promise in Bloom",
+    category: "Prenup",
+    src: "/images/prenup/prenup-01.jpg",
+    alt: "Romantic prenup portrait with soft natural light",
     height: "medium",
   },
   {
@@ -188,8 +195,8 @@ export const portfolioItems: PortfolioItem[] = [
     id: "p7",
     title: "Veil in Motion",
     category: "Wedding",
-    src: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
-    alt: "Bride with flowing veil in dramatic light",
+    src: "/images/wedding/wedding-02.jpg",
+    alt: "Dramatic wedding portrait with elegant lighting",
     height: "tall",
   },
   {
@@ -218,10 +225,10 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "p11",
-    title: "City Stroll",
-    category: "Lifestyle",
-    src: "https://images.unsplash.com/photo-1529634596773-5c84c3b0f3c5?auto=format&fit=crop&w=1200&q=80",
-    alt: "Couple walking through an urban setting",
+    title: "Golden Hour Vow",
+    category: "Prenup",
+    src: "/images/prenup/prenup-05.jpg",
+    alt: "Couple sharing a tender prenup moment",
     height: "tall",
   },
   {
@@ -231,6 +238,150 @@ export const portfolioItems: PortfolioItem[] = [
     src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80",
     alt: "Event tables styled for an elegant celebration",
     height: "short",
+  },
+  {
+    id: "p13",
+    title: "Sacred Exchange",
+    category: "Wedding",
+    src: "/images/wedding/wedding-04.jpg",
+    alt: "Wedding ceremony moment filled with emotion",
+    height: "medium",
+  },
+  {
+    id: "p14",
+    title: "Together Always",
+    category: "Prenup",
+    src: "/images/prenup/prenup-06.jpg",
+    alt: "Editorial prenup portrait of a couple",
+    height: "short",
+  },
+  {
+    id: "p15",
+    title: "Forever Frame",
+    category: "Wedding",
+    src: "/images/wedding/wedding-06.jpg",
+    alt: "Timeless wedding portrait with cinematic depth",
+    height: "tall",
+  },
+  {
+    id: "p16",
+    title: "Quiet Embrace",
+    category: "Prenup",
+    src: "/images/prenup/prenup-09.jpg",
+    alt: "Intimate prenup embrace in soft light",
+    height: "medium",
+  },
+  {
+    id: "p17",
+    title: "Ceremony Light",
+    category: "Wedding",
+    src: "/images/wedding/wedding-05.jpg",
+    alt: "Wedding portrait bathed in soft ceremony light",
+    height: "short",
+  },
+  {
+    id: "p18",
+    title: "Soft Glance",
+    category: "Prenup",
+    src: "/images/prenup/prenup-02.jpg",
+    alt: "Prenup couple sharing a quiet glance",
+    height: "tall",
+  },
+  {
+    id: "p19",
+    title: "Aisle Moment",
+    category: "Wedding",
+    src: "/images/wedding/wedding-07.jpg",
+    alt: "Emotional wedding moment captured mid-celebration",
+    height: "medium",
+  },
+  {
+    id: "p20",
+    title: "Editorial Love",
+    category: "Prenup",
+    src: "/images/prenup/prenup-04.jpg",
+    alt: "Editorial prenup portrait with refined composition",
+    height: "short",
+  },
+  {
+    id: "p21",
+    title: "Vows Remembered",
+    category: "Wedding",
+    src: "/images/wedding/wedding-09.jpg",
+    alt: "Cinematic wedding frame full of emotion",
+    height: "tall",
+  },
+  {
+    id: "p22",
+    title: "Near You",
+    category: "Prenup",
+    src: "/images/prenup/prenup-07.jpg",
+    alt: "Couple standing close during a prenup session",
+    height: "medium",
+  },
+  {
+    id: "p23",
+    title: "Reception Softness",
+    category: "Wedding",
+    src: "/images/wedding/wedding-10.jpg",
+    alt: "Romantic wedding portrait with soft atmosphere",
+    height: "short",
+  },
+  {
+    id: "p24",
+    title: "Held Close",
+    category: "Prenup",
+    src: "/images/prenup/prenup-08.jpg",
+    alt: "Intimate prenup moment between a couple",
+    height: "tall",
+  },
+  {
+    id: "p25",
+    title: "Timeless Day",
+    category: "Wedding",
+    src: "/images/wedding/wedding-11.jpg",
+    alt: "Elegant wedding image with timeless styling",
+    height: "medium",
+  },
+  {
+    id: "p26",
+    title: "Before Forever",
+    category: "Prenup",
+    src: "/images/prenup/prenup-10.jpg",
+    alt: "Romantic prenup portrait before the wedding day",
+    height: "short",
+  },
+  {
+    id: "p27",
+    title: "Last Dance Light",
+    category: "Wedding",
+    src: "/images/wedding/wedding-12.jpg",
+    alt: "Wedding couple framed in warm evening light",
+    height: "tall",
+  },
+  {
+    id: "p28",
+    title: "Promise Kept",
+    category: "Prenup",
+    src: "/images/prenup/prenup-03.jpg",
+    alt: "Couple embracing during a prenup photoshoot",
+    height: "medium",
+  },
+  {
+    id: "p29",
+    title: "Union Glow",
+    category: "Wedding",
+    src: "/images/wedding/wedding-03.jpg",
+    alt: "Wedding couple during a heartfelt ceremony moment",
+    height: "short",
+  },
+  {
+    id: "p30",
+    title: "Afterglow",
+    category: "Wedding",
+    src: "/images/wedding/wedding-08.jpg",
+    alt: "Couple embracing in soft cinematic wedding light",
+    height: "medium",
   },
 ];
 
@@ -331,8 +482,7 @@ export const ctaContent = {
   subtitle:
     "From intimate portraits to unforgettable celebrations—your moments deserve imagery that lasts.",
   buttonLabel: "Book Your Session",
-  background:
-    "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=2400&q=80",
+  background: "/images/wedding/wedding-08.jpg",
   backgroundAlt: "Couple embracing in soft cinematic light",
 };
 

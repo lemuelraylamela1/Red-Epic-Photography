@@ -25,7 +25,7 @@ export type ServiceProcessStep = {
 export type PortfolioCategory =
   | "All"
   | "Wedding"
-  | "Prenup"
+  | "Pre-wedding"
   | "Portrait"
   | "Family"
   | "Corporate"

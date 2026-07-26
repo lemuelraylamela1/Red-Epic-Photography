@@ -38,24 +38,24 @@ export const heroSlides: HeroSlide[] = [
     alt: "Wedding couple sharing a cinematic moment",
   },
   {
-    src: "/images/prenup/prenup-09.jpg",
-    alt: "Intimate prenup embrace in soft light",
+    src: "/images/pre-wedding/pre-wedding-09.jpg",
+    alt: "Intimate pre-wedding embrace in soft light",
   },
   {
     src: "/images/wedding/wedding-06.jpg",
     alt: "Timeless wedding portrait with cinematic depth",
   },
   {
-    src: "/images/prenup/prenup-05.jpg",
-    alt: "Elegant prenup session filled with emotion",
+    src: "/images/pre-wedding/pre-wedding-05.jpg",
+    alt: "Elegant pre-wedding session filled with emotion",
   },
   {
     src: "/images/wedding/wedding-11.jpg",
     alt: "Elegant wedding image with timeless styling",
   },
   {
-    src: "/images/prenup/prenup-07.jpg",
-    alt: "Couple standing close during a prenup session",
+    src: "/images/pre-wedding/pre-wedding-07.jpg",
+    alt: "Couple standing close during a pre-wedding session",
   },
 ];
 
@@ -91,8 +91,8 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "prenup",
-    title: "Prenup Photography",
+    id: "pre-wedding",
+    title: "Pre-wedding Photography",
     description:
       "Romantic, editorial sessions designed to tell your love story before the big day.",
     includes: [
@@ -186,7 +186,7 @@ export const serviceProcess: ServiceProcessStep[] = [
 export const portfolioCategories: PortfolioCategory[] = [
   "All",
   "Wedding",
-  "Prenup",
+  "Pre-wedding",
   "Portrait",
   "Family",
   "Corporate",
@@ -202,11 +202,11 @@ const jelJelaiPhotos = Array.from({ length: 12 }, (_, index) => {
   };
 });
 
-const prenupPhotos = Array.from({ length: 10 }, (_, index) => {
+const preWeddingPhotos = Array.from({ length: 10 }, (_, index) => {
   const n = String(index + 1).padStart(2, "0");
   return {
-    src: `/images/prenup/prenup-${n}.jpg`,
-    alt: `Prenup session photo ${index + 1}`,
+    src: `/images/pre-wedding/pre-wedding-${n}.jpg`,
+    alt: `Pre-wedding session photo ${index + 1}`,
   };
 });
 
@@ -221,13 +221,13 @@ export const portfolioAlbums: PortfolioAlbum[] = [
     photos: jelJelaiPhotos,
   },
   {
-    id: "prenup-session",
-    title: "Prenup Session",
-    category: "Prenup",
-    cover: "/images/prenup/prenup-01.jpg",
-    coverAlt: "Romantic prenup portrait with soft natural light",
+    id: "pre-wedding-session",
+    title: "Pre-wedding Session",
+    category: "Pre-wedding",
+    cover: "/images/pre-wedding/pre-wedding-01.jpg",
+    coverAlt: "Romantic pre-wedding portrait with soft natural light",
     height: "medium",
-    photos: prenupPhotos,
+    photos: preWeddingPhotos,
   },
   {
     id: "soft-light-portrait",
@@ -443,7 +443,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t4",
     name: "Sofia Lim",
-    role: "Prenup Session",
+    role: "Pre-wedding Session",
     quote:
       "Cinematic without being dramatic for drama's sake. The images feel timeless and deeply personal.",
     rating: 5,

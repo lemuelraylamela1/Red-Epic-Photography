@@ -137,7 +137,7 @@ export function Contact() {
                     }))
                   }>
                   <option>Wedding Photography</option>
-                  <option>Prenup Photography</option>
+                  <option>Pre-wedding Photography</option>
                   <option>Portrait Photography</option>
                   <option>Family Photography</option>
                   <option>Corporate Photography</option>

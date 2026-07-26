@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
-import { CursorGlow } from "@/components/ui/CursorGlow";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
@@ -86,7 +85,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <CursorGlow />
         {children}
         <ScrollToTop />
       </body>

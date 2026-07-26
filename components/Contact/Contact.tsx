@@ -27,9 +27,9 @@ const initialState: FormState = {
 export function Contact() {
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Partial<FormState>>({});
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
-    "idle",
-  );
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
   const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
   const isDemo = !endpoint;
 
@@ -89,19 +89,15 @@ export function Contact() {
           />
 
           <form className="space-y-5" onSubmit={onSubmit} noValidate>
-            {isDemo ? (
-              <p className="rounded-full bg-off-white px-4 py-2 text-xs tracking-wide text-muted">
-                Proposal demo mode — form validates and shows success without sending email.
-              </p>
-            ) : null}
-
             <div className="grid gap-5 sm:grid-cols-2">
               <Field
                 label="Name"
                 id="name"
                 error={errors.name}
                 value={form.name}
-                onChange={(value) => setForm((prev) => ({ ...prev, name: value }))}
+                onChange={(value) =>
+                  setForm((prev) => ({ ...prev, name: value }))
+                }
               />
               <Field
                 label="Email"
@@ -109,7 +105,9 @@ export function Contact() {
                 type="email"
                 error={errors.email}
                 value={form.email}
-                onChange={(value) => setForm((prev) => ({ ...prev, email: value }))}
+                onChange={(value) =>
+                  setForm((prev) => ({ ...prev, email: value }))
+                }
               />
             </div>
 
@@ -118,10 +116,14 @@ export function Contact() {
                 label="Phone"
                 id="phone"
                 value={form.phone}
-                onChange={(value) => setForm((prev) => ({ ...prev, phone: value }))}
+                onChange={(value) =>
+                  setForm((prev) => ({ ...prev, phone: value }))
+                }
               />
               <div>
-                <label htmlFor="service" className="mb-2 block text-sm font-medium">
+                <label
+                  htmlFor="service"
+                  className="mb-2 block text-sm font-medium">
                   Service
                 </label>
                 <select
@@ -129,9 +131,11 @@ export function Contact() {
                   className="w-full border border-dark/10 bg-off-white px-4 py-3 text-sm outline-none transition focus:border-accent"
                   value={form.service}
                   onChange={(event) =>
-                    setForm((prev) => ({ ...prev, service: event.target.value }))
-                  }
-                >
+                    setForm((prev) => ({
+                      ...prev,
+                      service: event.target.value,
+                    }))
+                  }>
                   <option>Wedding Photography</option>
                   <option>Prenup Photography</option>
                   <option>Portrait Photography</option>
@@ -143,7 +147,9 @@ export function Contact() {
             </div>
 
             <div>
-              <label htmlFor="message" className="mb-2 block text-sm font-medium">
+              <label
+                htmlFor="message"
+                className="mb-2 block text-sm font-medium">
                 Message
               </label>
               <textarea
@@ -184,13 +190,17 @@ export function Contact() {
             <ul className="mt-8 space-y-5 text-sm text-muted sm:text-base">
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 text-accent" size={18} aria-hidden />
-                <a href={`mailto:${contactInfo.email}`} className="hover:text-primary">
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="hover:text-primary">
                   {contactInfo.email}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 text-accent" size={18} aria-hidden />
-                <a href={`tel:${contactInfo.phone}`} className="hover:text-primary">
+                <a
+                  href={`tel:${contactInfo.phone}`}
+                  className="hover:text-primary">
                   {contactInfo.phone}
                 </a>
               </li>
@@ -202,7 +212,8 @@ export function Contact() {
 
             <div className="mt-8 flex gap-3">
               {socialLinks.map((link) => {
-                const Icon = link.icon === "facebook" ? FacebookIcon : InstagramIcon;
+                const Icon =
+                  link.icon === "facebook" ? FacebookIcon : InstagramIcon;
                 return (
                   <a
                     key={link.label}
@@ -210,8 +221,7 @@ export function Contact() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={link.label}
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-dark/10 text-body transition hover:border-accent hover:text-accent"
-                  >
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-dark/10 text-body transition hover:border-accent hover:text-accent">
                     <Icon size={18} />
                   </a>
                 );

@@ -49,7 +49,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-svh w-full items-end overflow-x-clip overflow-y-hidden pb-[max(5rem,calc(env(safe-area-inset-bottom)+4.5rem))] pt-[max(6.5rem,calc(env(safe-area-inset-top)+5.5rem))] text-white sm:items-center sm:pb-16 sm:pt-28 md:pb-0"
+      className="relative flex min-h-svh w-full items-center overflow-x-clip overflow-y-hidden pb-24 pt-24 text-white sm:pb-16 sm:pt-28 md:pb-0"
     >
       <div className="absolute inset-0 brand-gradient" aria-hidden />
 
@@ -107,7 +107,7 @@ export function Hero() {
       ) : null}
 
       <div className="container-page relative z-10 w-full min-w-0">
-        <div className="w-full max-w-3xl min-w-0">
+        <div className="w-full min-w-0 max-w-3xl">
           <motion.h1
             initial={reduceMotion ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ export function Hero() {
             initial={reduceMotion ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.4 }}
-            className={`mt-4 w-full max-w-xl text-pretty break-words leading-relaxed text-white/80 sm:mt-6 text-[clamp(0.875rem,2.8vw+0.35rem,1.125rem)] ${
+            className={`mt-4 w-full max-w-xl text-pretty break-words text-[clamp(0.875rem,2.8vw+0.35rem,1.125rem)] leading-relaxed text-white/80 sm:mt-6 ${
               isShort ? "line-clamp-3 sm:line-clamp-none" : ""
             }`}
           >

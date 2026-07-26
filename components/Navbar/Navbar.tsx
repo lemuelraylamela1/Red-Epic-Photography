@@ -59,132 +59,141 @@ export function Navbar() {
   const isLightDesktop = !scrolled && !open;
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        // Mobile: always solid white so logo + menu stay readable
-        "border-b border-dark/5 bg-white/90 shadow-[0_10px_40px_rgba(52,0,6,0.08)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/80",
-        // Desktop: keep transparent → white on scroll
-        isLightDesktop
-          ? "lg:border-transparent lg:bg-transparent lg:shadow-none lg:backdrop-blur-none"
-          : "lg:border-dark/5 lg:bg-white/90 lg:shadow-[0_10px_40px_rgba(52,0,6,0.06)] lg:backdrop-blur-xl",
-      )}
-    >
-      <div className="container-page flex h-[4.5rem] items-center justify-between lg:h-20">
-        <div className="lg:hidden">
-          <Logo variant="brand" />
-        </div>
-        <div className="hidden lg:block">
-          <Logo variant={isLightDesktop ? "light" : "brand"} />
-        </div>
+    <>
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 w-full overflow-x-clip transition-all duration-500",
+          // Mobile: always solid white so logo + menu stay readable
+          "border-b border-dark/5 bg-white/90 shadow-[0_10px_40px_rgba(52,0,6,0.08)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/80",
+          // Desktop: keep transparent → white on scroll
+          isLightDesktop
+            ? "lg:border-transparent lg:bg-transparent lg:shadow-none lg:backdrop-blur-none"
+            : "lg:border-dark/5 lg:bg-white/90 lg:shadow-[0_10px_40px_rgba(52,0,6,0.06)] lg:backdrop-blur-xl",
+        )}
+      >
+        <div className="container-page flex h-[4.5rem] min-w-0 items-center justify-between gap-3 lg:h-20">
+          <div className="min-w-0 flex-1 lg:hidden">
+            <Logo variant="brand" />
+          </div>
+          <div className="hidden lg:block">
+            <Logo variant={isLightDesktop ? "light" : "brand"} />
+          </div>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
-          {navigation.map((item) => {
-            const id = item.href.split("#")[1] ?? "";
-            const active = isHome && activeId === id;
-            return (
-              <a
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "relative text-sm tracking-wide transition-colors",
-                  isLightDesktop
-                    ? "text-white/80 hover:text-white"
-                    : "text-body/70 hover:text-primary",
-                  active && (isLightDesktop ? "text-white" : "text-primary"),
-                )}
-              >
-                {item.label}
-                <span
-                  className={cn(
-                    "absolute -bottom-2 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300",
-                    active && "scale-x-100",
-                  )}
-                />
-              </a>
-            );
-          })}
-        </nav>
-
-        <div className="hidden lg:block">
-          <MagneticButton
-            href="/#contact"
-            variant={isLightDesktop ? "secondary" : "primary"}
-            className="!px-5 !py-2.5 text-xs uppercase tracking-[0.18em]"
+          <nav
+            className="hidden items-center gap-8 lg:flex"
+            aria-label="Primary"
           >
-            Book a Session
-          </MagneticButton>
-        </div>
+            {navigation.map((item) => {
+              const id = item.href.split("#")[1] ?? "";
+              const active = isHome && activeId === id;
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "relative text-sm tracking-wide transition-colors",
+                    isLightDesktop
+                      ? "text-white/80 hover:text-white"
+                      : "text-body/70 hover:text-primary",
+                    active && (isLightDesktop ? "text-white" : "text-primary"),
+                  )}>
+                  {item.label}
+                  <span
+                    className={cn(
+                      "absolute -bottom-2 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300",
+                      active && "scale-x-100",
+                    )}
+                  />
+                </a>
+              );
+            })}
+          </nav>
 
-        <button
-          type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 bg-primary text-white shadow-sm lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-drawer"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </div>
+          <div className="hidden lg:block">
+            <MagneticButton
+              href="/#contact"
+              variant={isLightDesktop ? "secondary" : "primary"}
+              className="!px-5 !py-2.5 text-xs uppercase tracking-[0.18em]">
+              Book a Session
+            </MagneticButton>
+          </div>
+
+          <button
+            type="button"
+            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-primary text-white shadow-sm lg:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-drawer"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((value) => !value)}>
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </header>
 
       <AnimatePresence>
         {open ? (
           <motion.div
+            key="mobile-drawer"
             id="mobile-drawer"
             role="dialog"
             aria-modal="true"
             aria-labelledby={drawerTitleId}
-            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-[80] flex flex-col lg:hidden"
+            style={{ backgroundColor: "rgba(255, 255, 255, 0.4s)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-          >
-            <div className="container-page flex h-full flex-col pt-24 pb-10">
-              <div className="mb-10 flex items-center justify-between">
-                <h2 id={drawerTitleId} className="wordmark text-xs text-primary">
-                  Menu
-                </h2>
+            transition={{ duration: 0.25 }}>
+            <div
+              className="flex h-full min-h-[100svh] w-full flex-col backdrop-blur-xl"
+              style={{ backgroundColor: "rgba(255, 255, 255, 0.45)" }}>
+              <div className="container-page flex h-[4.5rem] shrink-0 items-center justify-between border-b border-dark/5">
+                <Logo variant="brand" />
                 <button
                   ref={closeRef}
                   type="button"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-dark/10"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 bg-primary text-white shadow-sm"
                   aria-label="Close menu"
-                  onClick={() => setOpen(false)}
-                >
+                  onClick={() => setOpen(false)}>
                   <X size={20} />
                 </button>
               </div>
 
-              <nav className="flex flex-col gap-6" aria-label="Mobile">
-                {navigation.map((item, index) => (
-                  <motion.a
-                    key={item.href}
-                    href={item.href}
-                    className="text-3xl font-semibold text-body"
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.05 * index }}
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.label}
-                  </motion.a>
-                ))}
-              </nav>
+              <div className="container-page flex min-h-0 flex-1 flex-col items-center justify-center overflow-y-auto py-10 text-center">
+                <h2 id={drawerTitleId} className="sr-only">
+                  Menu
+                </h2>
 
-              <div className="mt-auto">
-                <MagneticButton
-                  href="/#contact"
-                  className="w-full"
-                  onClick={() => setOpen(false)}
-                >
-                  Book a Session
-                </MagneticButton>
+                <nav
+                  className="flex flex-col items-center gap-6"
+                  aria-label="Mobile">
+                  {navigation.map((item, index) => (
+                    <motion.a
+                      key={item.href}
+                      href={item.href}
+                      className="text-3xl font-semibold text-body"
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.05 * index }}
+                      onClick={() => setOpen(false)}>
+                      {item.label}
+                    </motion.a>
+                  ))}
+                </nav>
+
+                <div className="mt-10 w-full max-w-xs">
+                  <MagneticButton
+                    href="/#contact"
+                    className="w-full"
+                    onClick={() => setOpen(false)}>
+                    Book a Session
+                  </MagneticButton>
+                </div>
               </div>
             </div>
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

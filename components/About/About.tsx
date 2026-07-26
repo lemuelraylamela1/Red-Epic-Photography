@@ -20,7 +20,7 @@ export function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark/35 via-transparent to-transparent" />
             </div>
-            <div className="absolute right-4 bottom-4 bg-white/95 px-6 py-5 shadow-soft backdrop-blur sm:right-[-1.5rem] sm:bottom-10">
+            <div className="absolute right-4 bottom-4 bg-white/95 px-6 py-5 shadow-soft backdrop-blur sm:bottom-10 lg:right-0">
               <p className="font-heading text-4xl font-semibold text-primary">
                 {aboutContent.years}
               </p>

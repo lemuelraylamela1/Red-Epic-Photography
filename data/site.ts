@@ -17,7 +17,7 @@ export const siteConfig = {
   tagline: "Capturing Moments.\nCreating Timeless Memories.",
   description:
     "Red Epic Photography preserves life's most meaningful moments through cinematic, timeless imagery—crafted with elegance, emotion, and precision.",
-  url: "https://redepicphotography.com",
+  url: "https://red-epic-photography.vercel.app/",
   logo: "/images/logo-red-epic.png",
   mark: "/icons/red-epic-mark.svg",
 };

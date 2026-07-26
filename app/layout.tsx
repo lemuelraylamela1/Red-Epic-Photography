@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import { CursorGlow } from "@/components/ui/CursorGlow";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
@@ -17,6 +18,12 @@ const inter = Inter({
   weight: ["400", "500", "600"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -73,14 +80,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${inter.variable} h-full`}>
-      <body className="min-h-full bg-background font-body text-body antialiased">
+    <html lang="en" className={`${montserrat.variable} ${inter.variable} h-full w-full overflow-x-clip`}>
+      <body className="m-0 min-h-full w-full overflow-x-clip bg-background p-0 font-body text-body antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <CursorGlow />
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );

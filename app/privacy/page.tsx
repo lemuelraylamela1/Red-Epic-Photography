@@ -21,14 +21,14 @@ export default function PrivacyPage() {
           <h1 className="text-4xl font-semibold sm:text-5xl">Privacy Policy</h1>
           <p className="mt-6 text-muted leading-relaxed">
             This is a placeholder privacy policy for the {siteConfig.name}{" "}
-            proposal website. Before launch, replace this page with the studio&apos;s
-            final privacy practices covering inquiry forms, analytics, cookies, and
-            image usage rights.
+            proposal website. Before launch, replace this page with the
+            studio&apos;s final privacy practices covering inquiry forms,
+            analytics, cookies, and image usage rights.
           </p>
           <div className="mt-8 space-y-4 text-sm leading-relaxed text-body/80">
             <p>
-              Inquiry details submitted through the contact form are used only to
-              respond to booking requests and related communication.
+              Inquiry details submitted through the contact form are used only
+              to respond to booking requests and related communication.
             </p>
             <p>
               Portfolio images remain the property of {siteConfig.name} unless
@@ -38,17 +38,15 @@ export default function PrivacyPage() {
               For privacy questions, contact{" "}
               <a
                 className="text-primary underline-offset-4 hover:underline"
-                href="mailto:hello@redepicphotography.com"
-              >
-                hello@redepicphotography.com
+                href="mailto:redepicphotography@gmail.com">
+                redepicphotography@gmail.com
               </a>
               .
             </p>
           </div>
           <Link
             href="/"
-            className="mt-10 inline-flex text-sm font-medium text-primary hover:underline"
-          >
+            className="mt-10 inline-flex text-sm font-medium text-primary hover:underline">
             Back to home
           </Link>
         </div>

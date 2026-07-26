@@ -55,19 +55,28 @@ export function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const isLight = !scrolled && !open;
+  // Desktop only: transparent over hero. Mobile always uses solid contrast.
+  const isLightDesktop = !scrolled && !open;
 
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled || open
-          ? "border-b border-dark/5 bg-white/90 shadow-[0_10px_40px_rgba(52,0,6,0.06)] backdrop-blur-xl"
-          : "bg-transparent",
+        // Mobile: always solid white so logo + menu stay readable
+        "border-b border-dark/5 bg-white/90 shadow-[0_10px_40px_rgba(52,0,6,0.08)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/80",
+        // Desktop: keep transparent → white on scroll
+        isLightDesktop
+          ? "lg:border-transparent lg:bg-transparent lg:shadow-none lg:backdrop-blur-none"
+          : "lg:border-dark/5 lg:bg-white/90 lg:shadow-[0_10px_40px_rgba(52,0,6,0.06)] lg:backdrop-blur-xl",
       )}
     >
       <div className="container-page flex h-[4.5rem] items-center justify-between lg:h-20">
-        <Logo variant={isLight ? "light" : "brand"} />
+        <div className="lg:hidden">
+          <Logo variant="brand" />
+        </div>
+        <div className="hidden lg:block">
+          <Logo variant={isLightDesktop ? "light" : "brand"} />
+        </div>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
           {navigation.map((item) => {
@@ -79,8 +88,10 @@ export function Navbar() {
                 href={item.href}
                 className={cn(
                   "relative text-sm tracking-wide transition-colors",
-                  isLight ? "text-white/80 hover:text-white" : "text-body/70 hover:text-primary",
-                  active && (isLight ? "text-white" : "text-primary"),
+                  isLightDesktop
+                    ? "text-white/80 hover:text-white"
+                    : "text-body/70 hover:text-primary",
+                  active && (isLightDesktop ? "text-white" : "text-primary"),
                 )}
               >
                 {item.label}
@@ -98,7 +109,7 @@ export function Navbar() {
         <div className="hidden lg:block">
           <MagneticButton
             href="/#contact"
-            variant={isLight ? "secondary" : "primary"}
+            variant={isLightDesktop ? "secondary" : "primary"}
             className="!px-5 !py-2.5 text-xs uppercase tracking-[0.18em]"
           >
             Book a Session
@@ -107,12 +118,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className={cn(
-            "inline-flex h-11 w-11 items-center justify-center rounded-full border lg:hidden",
-            isLight
-              ? "border-white/30 text-white"
-              : "border-dark/10 text-body",
-          )}
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 bg-primary text-white shadow-sm lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-drawer"
           aria-label={open ? "Close menu" : "Open menu"}

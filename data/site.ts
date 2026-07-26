@@ -337,21 +337,21 @@ export const ctaContent = {
 };
 
 export const contactInfo: ContactInfo = {
-  email: "hello@redepicphotography.com",
-  phone: "+63 900 000 0000",
-  address: "Metro Manila, Philippines",
-  mapEmbedLabel: "Google Map placeholder — studio location",
+  email: "redepicphotography@gmail.com",
+  phone: "+63 917 939 9007",
+  address: "Butuan City, Philippines",
+  mapEmbedLabel: "Google Map of Butuan City, Philippines",
 };
 
 export const socialLinks: SocialLink[] = [
   {
     label: "Facebook",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/redepicprod",
     icon: "facebook",
   },
   {
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/redepicphoto/",
     icon: "instagram",
   },
 ];

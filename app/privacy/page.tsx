@@ -38,8 +38,8 @@ export default function PrivacyPage() {
               For privacy questions, contact{" "}
               <a
                 className="text-primary underline-offset-4 hover:underline"
-                href="mailto:redepicphotography@gmail.com">
-                redepicphotography@gmail.com
+                href="mailto:redepicphoto@gmail.com">
+                redepicphoto@gmail.com
               </a>
               .
             </p>

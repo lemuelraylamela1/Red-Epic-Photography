@@ -411,7 +411,7 @@ export const ctaContent = {
 };
 
 export const contactInfo: ContactInfo = {
-  email: "redepicphotography@gmail.com",
+  email: "redepicphoto@gmail.com",
   phone: "+63 917 939 9007",
   address: "Butuan City, Philippines",
   mapEmbedLabel: "Google Map of Butuan City, Philippines",

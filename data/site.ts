@@ -6,6 +6,7 @@ import type {
   PortfolioCategory,
   Reason,
   Service,
+  ServiceProcessStep,
   SocialLink,
   Testimonial,
 } from "@/types";
@@ -82,52 +83,103 @@ export const services: Service[] = [
     title: "Wedding Photography",
     description:
       "Full-day coverage that captures ceremony, celebration, and every quiet moment in between.",
-    image: "/images/wedding/wedding-03.jpg",
-    alt: "Wedding couple during a heartfelt ceremony moment",
+    includes: [
+      "Full-day or half-day coverage",
+      "Edited high-resolution gallery",
+      "Online private album delivery",
+      "Optional second shooter",
+    ],
   },
   {
     id: "prenup",
     title: "Prenup Photography",
     description:
       "Romantic, editorial sessions designed to tell your love story before the big day.",
-    image: "/images/prenup/prenup-03.jpg",
-    alt: "Couple embracing during a prenup photoshoot",
+    includes: [
+      "Creative location planning",
+      "Guided posing and direction",
+      "Outfit change support",
+      "Highlight selects for save-the-dates",
+    ],
   },
   {
     id: "portrait",
     title: "Portrait Photography",
     description:
       "Refined individual and couple portraits with polished lighting and natural expression.",
-    image:
-      "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1200&q=80",
-    alt: "Elegant studio portrait of a woman",
+    includes: [
+      "Studio or on-location setup",
+      "Lighting and styling guidance",
+      "Retouched final selects",
+      "Print-ready files",
+    ],
   },
   {
     id: "family",
     title: "Family Photography",
     description:
       "Warm, authentic family sessions that feel effortless and beautifully composed.",
-    image:
-      "https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=1200&q=80",
-    alt: "Family walking together outdoors at sunset",
+    includes: [
+      "Relaxed outdoor or lifestyle session",
+      "Natural prompting for real moments",
+      "Family-friendly pacing",
+      "Shared gallery for relatives",
+    ],
   },
   {
     id: "corporate",
     title: "Corporate Photography",
     description:
       "Professional headshots and brand imagery that communicate clarity and trust.",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80",
-    alt: "Corporate professional in a refined portrait",
+    includes: [
+      "Consistent brand-ready portraits",
+      "On-site or studio options",
+      "Quick turnaround available",
+      "Web and print formats",
+    ],
   },
   {
     id: "events",
     title: "Events",
     description:
       "From private gatherings to milestone celebrations—documented with cinematic presence.",
-    image:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80",
-    alt: "Guests celebrating at an elegant evening event",
+    includes: [
+      "Coverage timed to your program",
+      "Candid and key moments",
+      "Edited event gallery",
+      "Same-week preview option",
+    ],
+  },
+];
+
+export const serviceProcess: ServiceProcessStep[] = [
+  {
+    id: "s1",
+    step: "01",
+    title: "Inquiry",
+    description:
+      "Share your date, vision, and session type. We’ll confirm availability and recommend the right package.",
+  },
+  {
+    id: "s2",
+    step: "02",
+    title: "Planning",
+    description:
+      "We align on timeline, locations, wardrobe, and creative direction so the day feels calm and intentional.",
+  },
+  {
+    id: "s3",
+    step: "03",
+    title: "Session",
+    description:
+      "On the day, we guide lightly, stay present, and capture the moments that matter most.",
+  },
+  {
+    id: "s4",
+    step: "04",
+    title: "Delivery",
+    description:
+      "Your edited gallery arrives online—organized, high-resolution, and ready to share or print.",
   },
 ];
 

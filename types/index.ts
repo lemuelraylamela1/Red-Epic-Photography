@@ -12,8 +12,14 @@ export type Service = {
   id: string;
   title: string;
   description: string;
-  image: string;
-  alt: string;
+  includes: string[];
+};
+
+export type ServiceProcessStep = {
+  id: string;
+  step: string;
+  title: string;
+  description: string;
 };
 
 export type PortfolioCategory =
